@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  gps-chat:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./chat.db:/app/chat.db
+    restart: unless-stopped
